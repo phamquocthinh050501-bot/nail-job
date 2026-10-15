@@ -1,0 +1,187 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap');
+.t3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:10px 0 6px}
+.m{height:300px;border-radius:18px;border:1px solid #ddd;overflow:hidden;position:relative;background:#fff7f5;color:#4a2c3a;font-family:'Be Vietnam Pro',sans-serif;font-size:11px;text-align:left}
+.m *{box-sizing:border-box;margin:0}
+.dk{background:linear-gradient(160deg,#1a1240,#3b1d6e 60%,#7b2d8e);color:#fff}
+.lg{font:800 14px 'Plus Jakarta Sans',sans-serif}
+.lg i{color:#ff7ad9;font-style:normal}
+.btn{display:inline-block;padding:6px 12px;border-radius:10px;font-weight:700;font-size:11px;color:#fff;background:linear-gradient(90deg,#ff7ad9,#8f6bff)}
+.btn2{display:inline-block;padding:5px 10px;border-radius:999px;font-weight:600;font-size:10px;color:#fff;background:#e8789b}
+.row{display:flex;align-items:center;justify-content:space-between}
+.pad{padding:12px 14px}
+.chip{display:inline-block;padding:4px 9px;border-radius:999px;border:1px solid #f3c9d6;background:#fff;font-size:10px;margin:0 4px 4px 0}
+.chip.on{background:#e8789b;color:#fff;border-color:#e8789b}
+.card2{background:#fff;border:1px solid #f3c9d6;border-radius:12px;padding:9px 10px}
+.price{font-weight:800;color:#c2477a}
+.dur{color:#8a6475;font-size:10px}
+.tile{border-radius:12px;position:relative;overflow:hidden}
+.tile span{position:absolute;left:6px;bottom:5px;font-size:9px;color:#fff;background:rgba(0,0,0,.35);padding:1px 6px;border-radius:99px}
+.pro{font-size:12px;color:#2e8b3d;margin-top:3px;line-height:1.4}
+.con{font-size:12px;color:#c0392b;margin-top:2px;line-height:1.4}
+.rec{margin:6px 0 30px;padding:10px 12px;border-radius:10px;background:rgba(88,101,242,.12);border:1px solid rgba(88,101,242,.35);font-size:13px;line-height:1.5}
+.sep{margin-top:34px}
+.bar{height:6px;border-radius:9px;background:#f3c9d6;flex:1;margin:0 2px}
+.bar.on{background:#e8789b}
+.slot{display:inline-block;width:23%;text-align:center;padding:5px 0;margin:0 1% 4px 0;border:1px solid #f3c9d6;background:#fff;border-radius:9px;font-size:10px}
+.slot.on{background:#e8789b;color:#fff;border-color:#e8789b}
+.slot.off{opacity:.35;text-decoration:line-through}
+.day{display:inline-block;width:17%;text-align:center;padding:5px 0;margin-right:1%;border-radius:10px;border:1px solid #f3c9d6;background:#fff;font-size:10px}
+.day.on{background:#e8789b;color:#fff}
+.nv{display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:8px;font-size:10px}
+.nv.on{background:#fde6ee;color:#c2477a;font-weight:700}
+.kpi{background:#fff;border:1px solid #f3c9d6;border-radius:10px;padding:7px 9px}
+.kpi b{display:block;font-size:15px;color:#7a3b55}
+</style>
+
+<h2>Vòng 2 · Component (hướng lai C + A)</h2>
+<p class="subtitle">5 nhóm, mỗi nhóm 3 mẫu: header, gallery, bảng giá, bước đặt lịch, sidebar admin. Bấm vào mẫu bạn chọn. Dưới mỗi mẫu có ưu (+) nhược (−), cuối mỗi nhóm có đề xuất. Màu và chữ dùng chung bảng: nền kem, hồng #e8789b, tím gradient cho điểm nhấn.</p>
+
+<!-- 1 HEADER -->
+<h3>1 · Header / điều hướng (điện thoại)</h3>
+<div class="t3">
+  <div class="card" data-choice="header-1-topbar" onclick="toggleSelect(this)"><div class="card-image">
+    <div class="m"><div class="dk pad row"><span class="lg">lụa<i>.</i>nails</span><span class="row" style="gap:8px"><span class="btn">Đặt lịch</span><span>☰</span></span></div>
+      <div class="pad"><b style="font-size:13px">Dịch vụ phổ biến</b><div class="card2" style="margin-top:8px">Gel tay <span class="price">350.000đ</span></div></div></div></div>
+    <div class="card-body"><h3>1A · Thanh trên + menu ☰</h3>
+      <p class="pro">+ Quen thuộc, dễ làm, dễ SEO</p><p class="pro">+ Nút "Đặt lịch" luôn thấy</p>
+      <p class="con">− Menu ẩn sau ☰, thêm một lần chạm</p><p class="con">− Với 5-6 mục điều hướng thì chật</p></div></div>
+
+  <div class="card" data-choice="header-2-tabbar" onclick="toggleSelect(this)"><div class="card-image">
+    <div class="m"><div class="pad row"><span class="lg" style="color:#7a3b55">lụa<i>.</i>nails</span><span>🔔</span></div>
+      <div class="pad"><b style="font-size:13px">Dịch vụ phổ biến</b><div class="card2" style="margin-top:8px">Gel tay <span class="price">350.000đ</span></div></div>
+      <div style="position:absolute;left:0;right:0;bottom:0;background:#fff;border-top:1px solid #f3c9d6;padding:6px 10px;display:flex;justify-content:space-between;align-items:flex-end;text-align:center;font-size:9px"><span>🏠<br>Trang chủ</span><span>💅<br>Dịch vụ</span><span style="margin-top:-18px"><span class="btn" style="border-radius:50%;padding:11px 13px;font-size:14px">＋</span><br>Đặt lịch</span><span>📅<br>Lịch hẹn</span><span>👤<br>Tôi</span></div></div></div>
+    <div class="card-body"><h3>1B · Thanh tab dưới (như app)</h3>
+      <p class="pro">+ Cảm giác app, đúng thói quen trên điện thoại</p><p class="pro">+ Chạm một lần tới mọi mục, nút đặt lịch nổi bật giữa</p>
+      <p class="con">− Trên màn hình rộng (laptop) phải chuyển sang thanh trên</p><p class="con">− Cần xử lý tránh vùng vuốt hệ thống (iPhone)</p></div></div>
+
+  <div class="card" data-choice="header-3-glass" onclick="toggleSelect(this)"><div class="card-image">
+    <div class="m dk"><div style="margin:10px;padding:8px 12px;border-radius:99px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(8px)" class="row"><span class="lg">lụa<i>.</i>nails</span><span class="btn">Đặt lịch</span></div>
+      <div class="pad"><b style="font-size:16px">Nail bóng<br>như gương.</b></div></div></div>
+    <div class="card-body"><h3>1C · Viên thuốc kính mờ nổi</h3>
+      <p class="pro">+ Hợp hero tím glossy, rất "wow"</p><p class="pro">+ Thu gọn khi cuộn</p>
+      <p class="con">− Chữ khó đọc nếu nền phía sau thay đổi</p><p class="con">− Kính mờ tốn GPU trên máy yếu</p></div></div>
+</div>
+<div class="rec"><b>Đề xuất:</b> <b>1B + 1A</b> nhau theo màn hình: trên điện thoại dùng <b>thanh tab dưới (1B)</b> vì khách chủ yếu dùng điện thoại và cần chạm nhanh vào "Đặt lịch"; trên tablet/laptop dùng <b>thanh trên (1A)</b>. Mẫu 1C chỉ dùng cho hero trang chủ nếu muốn thêm điểm nhấn.</div>
+
+<!-- 2 GALLERY -->
+<h3 class="sep">2 · Gallery mẫu nail</h3>
+<div class="t3">
+  <div class="card" data-choice="gallery-1-masonry" onclick="toggleSelect(this)"><div class="card-image">
+    <div class="m pad"><div style="column-count:2;column-gap:6px">
+      <div class="tile" style="height:90px;background:#ffd1dc;margin-bottom:6px"><span>Ombre</span></div><div class="tile" style="height:60px;background:#e5d4f5;margin-bottom:6px"><span>French</span></div>
+      <div class="tile" style="height:70px;background:#ffe3c8;margin-bottom:6px"><span>Đính đá</span></div><div class="tile" style="height:100px;background:#c9e8f5;margin-bottom:6px"><span>3D</span></div>
+      <div class="tile" style="height:64px;background:#f7a8c0;margin-bottom:6px"><span>Mắt mèo</span></div></div></div></div>
+    <div class="card-body"><h3>2A · Lưới so le (masonry)</h3>
+      <p class="pro">+ Nhìn nhiều mẫu cùng lúc, đẹp như Pinterest</p><p class="pro">+ Bấm mở xem lớn</p>
+      <p class="con">− Tải nhiều ảnh, cần tối ưu và tải lười</p><p class="con">− Ảnh khác tỉ lệ phải xử lý kỹ</p></div></div>
+
+  <div class="card" data-choice="gallery-2-carousel" onclick="toggleSelect(this)"><div class="card-image">
+    <div class="m pad"><div class="tile" style="height:190px;background:linear-gradient(135deg,#ffd1dc,#f7a8c0)"><span>Ombre hồng · 380.000đ</span></div>
+      <div class="row" style="justify-content:center;margin-top:10px;gap:5px"><b style="width:16px;height:5px;border-radius:9px;background:#e8789b"></b><b style="width:5px;height:5px;border-radius:9px;background:#f3c9d6"></b><b style="width:5px;height:5px;border-radius:9px;background:#f3c9d6"></b></div>
+      <div style="text-align:center;margin-top:10px"><span class="btn2">Đặt mẫu này</span></div></div></div>
+    <div class="card-body"><h3>2B · Vuốt ngang từng mẫu lớn</h3>
+      <p class="pro">+ Vuốt cực hợp điện thoại, mỗi mẫu rõ ràng</p><p class="pro">+ Gắn nút "Đặt mẫu này" ngay trên ảnh</p>
+      <p class="con">− Xem được ít mẫu một lúc</p><p class="con">− Ít tiện để so sánh nhiều mẫu</p></div></div>
+
+  <div class="card" data-choice="gallery-3-filter" onclick="toggleSelect(this)"><div class="card-image">
+    <div class="m pad"><div><span class="chip on">Tất cả</span><span class="chip">Ombre</span><span class="chip">French</span><span class="chip">Đính đá</span></div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:6px">
+        <div class="tile" style="height:70px;background:#ffd1dc"></div><div class="tile" style="height:70px;background:#e5d4f5"></div><div class="tile" style="height:70px;background:#ffe3c8"></div>
+        <div class="tile" style="height:70px;background:#c9e8f5"></div><div class="tile" style="height:70px;background:#f7a8c0"></div><div class="tile" style="height:70px;background:#fde6a8"></div></div></div></div>
+    <div class="card-body"><h3>2C · Lưới đều + lọc theo kiểu</h3>
+      <p class="pro">+ Khách tìm đúng kiểu mình thích nhanh</p><p class="pro">+ Dễ làm, nhẹ, tỉ lệ ảnh đồng nhất</p>
+      <p class="con">− Nhìn đơn điệu hơn masonry</p><p class="con">− Cần gắn nhãn kiểu cho từng ảnh (thêm việc nhập liệu)</p></div></div>
+</div>
+<div class="rec"><b>Đề xuất:</b> <b>2C (lọc) kết hợp 2A (lưới so le)</b> cho trang Gallery đầy đủ, và <b>2B (vuốt ngang)</b> cho khối "Mẫu nổi bật" ở trang chủ. Với Demo, ảnh nail có thể dùng ảnh mẫu bản quyền thoải mái hoặc để chủ tiệm cung cấp ảnh thật khi chốt khách.</div>
+
+<!-- 3 PRICING -->
+<h3 class="sep">3 · Bảng giá dịch vụ (nhóm tay, chân, gel, đắp bột, chăm sóc)</h3>
+<div class="t3">
+  <div class="card" data-choice="price-1-accordion" onclick="toggleSelect(this)"><div class="card-image">
+    <div class="m pad"><div class="card2 row"><b>💅 Tay</b><span>▾</span></div>
+      <div style="margin:6px 0 6px 8px"><div class="row" style="padding:4px 0;border-bottom:1px dashed #f3c9d6"><span>Sơn thường<br><span class="dur">30 phút</span></span><span class="price">120.000đ</span></div><div class="row" style="padding:4px 0"><span>Gel tay<br><span class="dur">60 phút</span></span><span class="price">350.000đ</span></div></div>
+      <div class="card2 row" style="margin-bottom:6px"><b>🦶 Chân</b><span>▸</span></div><div class="card2 row" style="margin-bottom:6px"><b>✨ Đắp bột</b><span>▸</span></div><div class="card2 row"><b>🌿 Chăm sóc</b><span>▸</span></div></div></div>
+    <div class="card-body"><h3>3A · Danh sách gập mở theo nhóm</h3>
+      <p class="pro">+ Gọn, thấy nhóm một lượt, dễ bấm trên điện thoại</p><p class="pro">+ Thêm nhóm mới không vỡ bố cục</p>
+      <p class="con">− Phải bấm mở mới thấy giá</p><p class="con">− Ít "đẹp mắt" hơn dạng thẻ</p></div></div>
+
+  <div class="card" data-choice="price-2-tabs" onclick="toggleSelect(this)"><div class="card-image">
+    <div class="m pad"><div style="background:#fff;border:1px solid #f3c9d6;border-radius:99px;padding:3px;display:flex;font-size:10px;text-align:center"><span class="btn2" style="flex:1">Tay</span><span style="flex:1;padding:5px 0">Chân</span><span style="flex:1;padding:5px 0">Gel</span><span style="flex:1;padding:5px 0">Bột</span></div>
+      <div class="card2 row" style="margin-top:10px"><span><b>Gel tay</b><br><span class="dur">60 phút</span></span><span><span class="price">350.000đ</span><br><span class="btn2" style="margin-top:3px">Chọn</span></span></div>
+      <div class="card2 row" style="margin-top:6px"><span><b>Sơn thường</b><br><span class="dur">30 phút</span></span><span><span class="price">120.000đ</span><br><span class="btn2" style="margin-top:3px">Chọn</span></span></div></div></div>
+    <div class="card-body"><h3>3B · Tab ngang + thẻ có nút "Chọn"</h3>
+      <p class="pro">+ Thấy giá, thời lượng, nút chọn cùng lúc</p><p class="pro">+ Nối thẳng vào đặt lịch</p>
+      <p class="con">− 5 tab trên màn nhỏ phải cuộn ngang</p><p class="con">− Phải đổi tab để so sánh giá giữa các nhóm</p></div></div>
+
+  <div class="card" data-choice="price-3-grid" onclick="toggleSelect(this)"><div class="card-image">
+    <div class="m pad" style="display:grid;grid-template-columns:1fr 1fr;gap:8px;align-content:start">
+      <div class="card2"><div style="height:46px;border-radius:9px;background:#ffd1dc;margin-bottom:6px"></div><b>Gel tay</b><br><span class="dur">60 phút</span><br><span class="price">350.000đ</span></div>
+      <div class="card2"><div style="height:46px;border-radius:9px;background:#e5d4f5;margin-bottom:6px"></div><b>Đắp bột</b><br><span class="dur">90 phút</span><br><span class="price">450.000đ</span></div>
+      <div class="card2"><div style="height:46px;border-radius:9px;background:#ffe3c8;margin-bottom:6px"></div><b>Gel chân</b><br><span class="dur">60 phút</span><br><span class="price">380.000đ</span></div>
+      <div class="card2"><div style="height:46px;border-radius:9px;background:#c9e8f5;margin-bottom:6px"></div><b>Chăm sóc</b><br><span class="dur">45 phút</span><br><span class="price">200.000đ</span></div></div></div>
+    <div class="card-body"><h3>3C · Lưới thẻ có ảnh</h3>
+      <p class="pro">+ Đẹp, giống menu có hình, dễ gây thèm</p><p class="pro">+ Hợp dịch vụ có ảnh minh họa</p>
+      <p class="con">− Tốn chỗ, danh sách dài phải cuộn nhiều</p><p class="con">− Cần ảnh cho từng dịch vụ</p></div></div>
+</div>
+<div class="rec"><b>Đề xuất:</b> <b>3B (tab + thẻ có nút Chọn)</b> làm bảng giá chính, vì nối thẳng vào đặt lịch, nhóm "Gel/Đắp bột" bấm là thấy giá và thời lượng. Dùng <b>3C</b> cho vài dịch vụ nổi bật ở trang chủ. Tab nhiều thì cho cuộn ngang. Giá luôn hiển thị dạng <b>350.000đ</b>.</div>
+
+<!-- 4 BOOKING -->
+<h3 class="sep">4 · Luồng đặt lịch (dịch vụ → thợ → ngày → giờ → thông tin)</h3>
+<div class="t3">
+  <div class="card" data-choice="book-1-wizard" onclick="toggleSelect(this)"><div class="card-image">
+    <div class="m pad"><div class="row" style="margin-bottom:8px"><span class="bar on"></span><span class="bar on"></span><span class="bar on"></span><span class="bar"></span><span class="bar"></span></div>
+      <b style="font-size:13px">Chọn giờ · Bước 4/5</b><div style="margin:8px 0"><span class="day">T2<br>14</span><span class="day on">T3<br>15</span><span class="day">T4<br>16</span><span class="day">T5<br>17</span><span class="day">T6<br>18</span></div>
+      <div><span class="slot">9:00</span><span class="slot off">9:30</span><span class="slot on">10:00</span><span class="slot">10:30</span><span class="slot">11:00</span><span class="slot off">11:30</span></div>
+      <div style="position:absolute;left:14px;right:14px;bottom:10px" class="row"><span>‹ Quay lại</span><span class="btn">Tiếp tục ›</span></div></div></div>
+    <div class="card-body"><h3>4A · Từng bước, mỗi bước một màn hình</h3>
+      <p class="pro">+ Tập trung, ít rối, hợp điện thoại</p><p class="pro">+ Dễ kiểm tra từng bước, tỉ lệ hoàn tất cao</p>
+      <p class="con">− Nhiều lần bấm "Tiếp tục"</p><p class="con">− Khó nhìn toàn cảnh, đổi ý dịch vụ phải quay lại</p></div></div>
+
+  <div class="card" data-choice="book-2-onepage" onclick="toggleSelect(this)"><div class="card-image">
+    <div class="m pad"><div class="card2 row" style="margin-bottom:6px"><span>✔ <b>Dịch vụ</b> · Gel tay</span><span class="dur">Sửa</span></div><div class="card2 row" style="margin-bottom:6px"><span>✔ <b>Thợ</b> · Bất kỳ</span><span class="dur">Sửa</span></div>
+      <div class="card2" style="margin-bottom:6px"><b>③ Ngày & giờ</b><div style="margin-top:6px"><span class="day on">T3 15</span><span class="day">T4</span><span class="day">T5</span></div><div style="margin-top:4px"><span class="slot">9:00</span><span class="slot on">10:00</span><span class="slot">10:30</span></div></div>
+      <div class="card2 dur">④ Thông tin của bạn…</div></div></div>
+    <div class="card-body"><h3>4B · Một trang, các mục gập mở</h3>
+      <p class="pro">+ Thấy toàn bộ, sửa lại từng mục nhanh</p><p class="pro">+ Hợp tablet và laptop</p>
+      <p class="con">− Trang dài, dễ ngợp trên điện thoại nhỏ</p><p class="con">− Khó chặn giờ trùng theo thời gian thật nếu đổi dịch vụ sau</p></div></div>
+
+  <div class="card" data-choice="book-3-sheet" onclick="toggleSelect(this)"><div class="card-image">
+    <div class="m pad"><b style="font-size:13px">Chọn dịch vụ</b><div class="card2 row" style="margin-top:8px;border-color:#e8789b"><span>☑ Gel tay <span class="dur">60'</span></span><span class="price">350.000đ</span></div><div class="card2 row" style="margin-top:6px"><span>☐ Đắp bột <span class="dur">90'</span></span><span class="price">450.000đ</span></div><div class="card2 row" style="margin-top:6px"><span>☑ Chăm sóc <span class="dur">45'</span></span><span class="price">200.000đ</span></div>
+      <div style="position:absolute;left:0;right:0;bottom:0;background:#fff;border-top:1px solid #f3c9d6;padding:10px 14px" class="row"><span><b>550.000đ</b><br><span class="dur">105 phút · 2 dịch vụ</span></span><span class="btn">Chọn giờ ›</span></div></div></div>
+    <div class="card-body"><h3>4C · Chọn nhiều dịch vụ + thanh tổng cố định</h3>
+      <p class="pro">+ Thấy ngay tổng tiền và tổng thời lượng</p><p class="pro">+ Hợp bán thêm dịch vụ (upsell)</p>
+      <p class="con">− Tính thời lượng nhiều dịch vụ phức tạp hơn khi chống trùng giờ</p><p class="con">− Theo bảng chia gói, đặt nhiều dịch vụ thuộc gói Nâng cấp</p></div></div>
+</div>
+<div class="rec"><b>Đề xuất:</b> Demo dùng <b>4A (từng bước)</b> trên điện thoại, kèm <b>thanh tổng tiền cố định ở đáy theo kiểu 4C</b> (hiển thị giá và thời lượng của dịch vụ đã chọn). Chọn <b>một</b> dịch vụ trước, vẫn khớp bảng chia gói. Khi nâng cấp thì mở rộng thành chọn nhiều dịch vụ. Với tablet có thể gộp bước thành 2 cột kiểu 4B.</div>
+
+<!-- 5 ADMIN SIDEBAR -->
+<h3 class="sep">5 · Điều hướng trang Admin (tablet)</h3>
+<div class="t3">
+  <div class="card" data-choice="admin-1-sidebar" onclick="toggleSelect(this)"><div class="card-image">
+    <div class="m" style="display:flex"><div style="width:92px;background:#fff;border-right:1px solid #f3c9d6;padding:10px 6px"><div class="lg" style="color:#7a3b55;padding:0 6px 8px">lụa<i>.</i>nails</div><div class="nv on">📊 Tổng quan</div><div class="nv">📅 Lịch hẹn</div><div class="nv">💅 Dịch vụ</div><div class="nv">👩 Thợ</div><div class="nv">👥 Khách</div><div class="nv">🎟 Khuyến mãi</div></div>
+      <div class="pad" style="flex:1"><b style="font-size:12px">Tổng quan</b><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px"><div class="kpi"><span class="dur">Lịch hôm nay</span><b>12</b></div><div class="kpi"><span class="dur">Doanh thu</span><b>4.850.000đ</b></div></div></div></div></div>
+    <div class="card-body"><h3>5A · Sidebar cố định có chữ</h3>
+      <p class="pro">+ Rõ ràng, chủ tiệm lớn tuổi dễ dùng</p><p class="pro">+ Chuẩn dashboard quen thuộc</p>
+      <p class="con">− Chiếm chỗ ngang, tablet dọc bị chật</p><p class="con">− Trên điện thoại phải chuyển thành menu ẩn</p></div></div>
+
+  <div class="card" data-choice="admin-2-rail" onclick="toggleSelect(this)"><div class="card-image">
+    <div class="m" style="display:flex"><div style="width:42px;background:#fff;border-right:1px solid #f3c9d6;padding:10px 4px;text-align:center;font-size:15px;line-height:2.1"><div style="background:#fde6ee;border-radius:8px">📊</div>📅<br>💅<br>👩<br>👥<br>🎟</div>
+      <div class="pad" style="flex:1"><b style="font-size:12px">Tổng quan</b><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:6px"><div class="kpi"><span class="dur">Hôm nay</span><b>12</b></div><div class="kpi"><span class="dur">Tuần</span><b>28,4tr</b></div><div class="kpi"><span class="dur">Chờ xác nhận</span><b>3</b></div></div></div></div></div>
+    <div class="card-body"><h3>5B · Thanh icon thu gọn (mở rộng khi chạm)</h3>
+      <p class="pro">+ Tiết kiệm chỗ, nội dung rộng, hợp tablet</p><p class="pro">+ Gọn, hiện đại</p>
+      <p class="con">− Icon không có chữ, người mới khó đoán</p><p class="con">− Cần tooltip hoặc mở rộng để đọc nhãn</p></div></div>
+
+  <div class="card" data-choice="admin-3-bottomtabs" onclick="toggleSelect(this)"><div class="card-image">
+    <div class="m"><div class="pad row"><b style="font-size:12px">Lịch hẹn · Hôm nay</b><span class="btn2">+ Thêm</span></div>
+      <div class="pad" style="padding-top:0"><span class="chip on">Chờ xác nhận 3</span><span class="chip">Đã xác nhận</span><span class="chip">Hoàn thành</span>
+        <div class="card2 row" style="margin-top:4px"><span><b>10:00 · Lan</b><br><span class="dur">Gel tay · Thợ Mai</span></span><span class="btn2">Xác nhận</span></div></div>
+      <div style="position:absolute;left:0;right:0;bottom:0;background:#fff;border-top:1px solid #f3c9d6;padding:6px 10px;display:flex;justify-content:space-between;text-align:center;font-size:9px"><span>📊<br>Tổng quan</span><span style="color:#c2477a;font-weight:700">📅<br>Lịch</span><span>💅<br>Dịch vụ</span><span>👩<br>Thợ</span><span>⋯<br>Khác</span></div></div></div>
+    <div class="card-body"><h3>5C · Tab dưới (kiểu app, dùng một tay)</h3>
+      <p class="pro">+ Chủ tiệm dùng điện thoại một tay, giữa lúc làm việc</p><p class="pro">+ Hợp thao tác nhanh: xác nhận, hoàn thành</p>
+      <p class="con">− Chỉ chứa 4-5 mục, phần còn lại dồn vào "Khác"</p><p class="con">− Trên laptop trông lệch, phải đổi sang sidebar</p></div></div>
+</div>
+<div class="rec"><b>Đề xuất:</b> <b>đáp ứng theo kích thước</b>: tablet và laptop dùng <b>5B (thanh icon thu gọn, bấm mở rộng thành 5A)</b>, điện thoại dùng <b>5C (tab dưới)</b>. Chủ tiệm thường mở lịch hẹn trên điện thoại giữa ca làm, nên 5C ưu tiên màn "Lịch hẹn" với nút Xác nhận/Hoàn thành thật to.</div>
+
+<h3 class="sep">Tóm tắt đề xuất của mình</h3>
+<div class="rec" style="font-size:14px"><b>Header:</b> 1B (điện thoại) + 1A (tablet/laptop) &nbsp;·&nbsp; <b>Gallery:</b> 2C + 2A, vuốt ngang 2B ở trang chủ &nbsp;·&nbsp; <b>Bảng giá:</b> 3B (3C cho mục nổi bật) &nbsp;·&nbsp; <b>Đặt lịch:</b> 4A + thanh tổng cố định kiểu 4C &nbsp;·&nbsp; <b>Admin:</b> 5B (tablet) + 5C (điện thoại)</div>

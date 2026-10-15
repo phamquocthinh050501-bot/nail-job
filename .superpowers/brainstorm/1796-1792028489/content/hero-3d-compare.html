@@ -1,0 +1,124 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+.duo{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.ph{width:100%;max-width:320px;margin:0 auto;height:560px;border-radius:30px;border:6px solid #1c1c1e;overflow:hidden;position:relative;font-family:'Plus Jakarta Sans','Be Vietnam Pro',sans-serif;background:#fff7f5}
+.ph *{box-sizing:border-box;margin:0}
+.top{position:relative;height:330px;background:linear-gradient(160deg,#1a1240,#3b1d6e 55%,#7b2d8e);color:#fff;overflow:hidden}
+.top .nav{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;position:relative;z-index:3}
+.top h1{font-size:30px;line-height:1.08;font-weight:800;background:linear-gradient(90deg,#fff,#ffb3e6 60%,#9ee7ff);-webkit-background-clip:text;color:transparent}
+.txt{position:absolute;left:18px;top:62px;z-index:3;max-width:190px}
+.txt p{font-size:12px;margin-top:8px;opacity:.85}
+.cta{display:inline-block;padding:11px 20px;font-size:13px;font-weight:700;margin-top:14px;background:linear-gradient(90deg,#ff7ad9,#8f6bff);border-radius:14px;box-shadow:0 8px 20px rgba(143,107,255,.5);color:#fff}
+.wave{position:absolute;left:0;right:0;bottom:-1px;height:34px;background:#fff7f5;border-radius:50% 50% 0 0/100% 100% 0 0;z-index:3}
+.below{padding:14px 18px;color:#4a2c3a}
+.below h4{font-size:13px;color:#7a3b55;margin-bottom:8px}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.mini{background:#fff;border:1px solid #f3c9d6;border-radius:14px;padding:10px;font-size:11px}
+.mini b{display:block;font-size:12px;color:#7a3b55}
+.orb{position:absolute;border-radius:50%;animation:float 6s ease-in-out infinite}
+.o1{right:14px;top:70px;width:110px;height:110px;background:radial-gradient(circle at 30% 25%,#fff,#ff7ad9 40%,#7b2d8e);box-shadow:0 18px 30px rgba(255,122,217,.35)}
+.o2{right:100px;top:190px;width:60px;height:60px;background:radial-gradient(circle at 30% 25%,#fff,#7ee7ff 45%,#3b6fd8);animation-delay:-2s}
+.o3{right:24px;top:200px;width:38px;height:38px;background:radial-gradient(circle at 30% 25%,#fff,#ffd36e 50%,#e08a1e);animation-delay:-4s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+#c3d{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+#fps{position:absolute;left:8px;bottom:40px;z-index:4;font:600 10px monospace;color:#9ee7ff;background:rgba(0,0,0,.35);padding:2px 6px;border-radius:6px}
+.pc{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.pc div{border-radius:10px;padding:10px 12px;font-size:12.5px;line-height:1.5}
+.pc .p{background:rgba(46,160,67,.12);border:1px solid rgba(46,160,67,.35)}
+.pc .c{background:rgba(218,54,51,.1);border:1px solid rgba(218,54,51,.3)}
+.pc h4{font-size:12px;margin-bottom:4px}
+.pc ul{padding-left:16px}
+.rec{margin-top:10px;padding:10px 12px;border-radius:10px;background:rgba(88,101,242,.12);border:1px solid rgba(88,101,242,.35);font-size:12.5px;line-height:1.5}
+</style>
+
+<h2>Vòng 2 · Màn 1: Hero có 3D hay không?</h2>
+<p class="subtitle">Bên phải là canvas 3D thật (Three.js) chạy trong trình duyệt của bạn. Di chuyển chuột hoặc chạm lên hero để thấy hạt gel nghiêng theo. Con số FPS ở góc cho biết độ mượt.</p>
+
+<div class="duo">
+
+  <div class="card" data-choice="hero-2p5d" onclick="toggleSelect(this)" style="padding:10px">
+    <div class="ph">
+      <div class="top">
+        <div class="nav"><b style="font-weight:800">lụa<span style="color:#ff7ad9">.</span>nails</b><span>☰</span></div>
+        <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+        <div class="txt"><h1>Nail bóng<br>như gương.</h1><p>Xu hướng mới, đặt lịch chỉ vài chạm.</p><span class="cta">Đặt lịch ngay</span></div>
+        <div class="wave"></div>
+      </div>
+      <div class="below"><h4>Dịch vụ phổ biến</h4>
+        <div class="cards"><div class="mini"><b>Gel tay</b>350.000đ · 60 phút</div><div class="mini"><b>Đắp bột</b>450.000đ · 90 phút</div></div>
+      </div>
+    </div>
+    <div class="card-body"><h3>1 · Hero 2.5D (không 3D thật)</h3><p>Hạt gel bằng CSS + Motion, nổi nhẹ.</p></div>
+  </div>
+
+  <div class="card" data-choice="hero-3d" onclick="toggleSelect(this)" style="padding:10px">
+    <div class="ph">
+      <div class="top" id="stage">
+        <canvas id="c3d"></canvas>
+        <div class="nav"><b style="font-weight:800">lụa<span style="color:#ff7ad9">.</span>nails</b><span>☰</span></div>
+        <div class="txt"><h1>Nail bóng<br>như gương.</h1><p>Xu hướng mới, đặt lịch chỉ vài chạm.</p><span class="cta">Đặt lịch ngay</span></div>
+        <div id="fps">FPS …</div>
+        <div class="wave"></div>
+      </div>
+      <div class="below"><h4>Dịch vụ phổ biến</h4>
+        <div class="cards"><div class="mini"><b>Gel tay</b>350.000đ · 60 phút</div><div class="mini"><b>Đắp bột</b>450.000đ · 90 phút</div></div>
+      </div>
+    </div>
+    <div class="card-body"><h3>2 · Hero 3D thật (Three.js)</h3><p>Hạt gel và đá đính xoay, bóng, phản ứng theo chạm.</p></div>
+  </div>
+
+</div>
+
+<div class="duo" style="margin-top:6px">
+  <div>
+    <div class="pc">
+      <div class="p"><h4>Ưu điểm</h4><ul><li>Nhẹ, chạy mượt cả máy yếu</li><li>Không thêm thư viện lớn</li><li>Tải tức thì, ổn định khi trình diễn</li></ul></div>
+      <div class="c"><h4>Nhược điểm</h4><ul><li>Ít "wow" hơn</li><li>Chiều sâu và độ bóng giả lập, không xoay được</li></ul></div>
+    </div>
+  </div>
+  <div>
+    <div class="pc">
+      <div class="p"><h4>Ưu điểm</h4><ul><li>Gây ấn tượng nhất, khác biệt rõ so với website nail thông thường</li><li>Tương tác thật, chủ tiệm thích thử chạm</li></ul></div>
+      <div class="c"><h4>Nhược điểm</h4><ul><li>Thêm khoảng 150KB (Three.js), tải chậm hơn</li><li>Tốn pin, máy yếu có thể giật</li><li>Cần lazy-load và ảnh tĩnh dự phòng</li></ul></div>
+    </div>
+  </div>
+</div>
+
+<div class="rec"><b>Đề xuất:</b> chọn <b>2 (3D thật)</b> nhưng làm theo cách an toàn: tải lười sau khi trang đã hiện, tự động rơi về <b>1 (2.5D)</b> khi máy yếu, khi người dùng bật "giảm chuyển động", hoặc khi tiết kiệm pin. Như vậy demo vẫn "wow" mà không đánh cược vào máy của khách. Chỉ dùng 3D ở hero, không dùng cho trang khác.</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  var stage=document.getElementById('stage'),cv=document.getElementById('c3d'),fpsEl=document.getElementById('fps');
+  if(!window.THREE||!stage){fpsEl&&(fpsEl.textContent='3D không tải được');return;}
+  var w=stage.clientWidth,h=stage.clientHeight;
+  var r=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true});
+  r.setPixelRatio(Math.min(devicePixelRatio,2));r.setSize(w,h,false);
+  var s=new THREE.Scene(),cam=new THREE.PerspectiveCamera(40,w/h,.1,100);cam.position.set(0,0,9);
+  s.add(new THREE.AmbientLight(0xffffff,.55));
+  var l1=new THREE.PointLight(0xff7ad9,1.6,30);l1.position.set(-5,4,6);s.add(l1);
+  var l2=new THREE.PointLight(0x7ee7ff,1.4,30);l2.position.set(6,-3,5);s.add(l2);
+  var l3=new THREE.DirectionalLight(0xffffff,.9);l3.position.set(2,5,6);s.add(l3);
+  function mat(c){return new THREE.MeshPhysicalMaterial({color:c,roughness:.12,metalness:.05,clearcoat:1,clearcoatRoughness:.04})}
+  var items=[];
+  function add(g,c,x,y,z,sp){var m=new THREE.Mesh(g,mat(c));m.position.set(x,y,z);m.userData={x:x,y:y,sp:sp,ph:Math.random()*6};s.add(m);items.push(m);return m}
+  add(new THREE.SphereGeometry(1.5,48,48),0xff5fd0,2.6,.6,0,1);
+  add(new THREE.SphereGeometry(.85,48,48),0x6fdcff,.4,-2.2,1,1.4);
+  add(new THREE.SphereGeometry(.55,48,48),0xffc24d,2.9,-2.4,1.5,1.9);
+  var gem=add(new THREE.OctahedronGeometry(.7,0),0xffffff,.2,2.4,.5,1.2);
+  gem.material=new THREE.MeshPhysicalMaterial({color:0xd8f4ff,roughness:.05,metalness:.6,clearcoat:1,flatShading:true});
+  var mx=0,my=0;
+  function mv(e){var b=stage.getBoundingClientRect(),p=e.touches?e.touches[0]:e;mx=((p.clientX-b.left)/b.width-.5)*2;my=((p.clientY-b.top)/b.height-.5)*2}
+  stage.addEventListener('pointermove',mv);stage.addEventListener('touchmove',mv,{passive:true});
+  var t0=performance.now(),fr=0,last=t0;
+  function loop(now){
+    var t=(now-t0)/1000;
+    items.forEach(function(m){var d=m.userData;m.position.y=d.y+Math.sin(t*d.sp+d.ph)*.35;m.rotation.y=t*.5*d.sp;m.rotation.x=t*.3*d.sp});
+    cam.position.x+=(mx*1.2-cam.position.x)*.06;cam.position.y+=(-my*.8-cam.position.y)*.06;cam.lookAt(0,0,0);
+    r.render(s,cam);
+    fr++;if(now-last>500){fpsEl.textContent='FPS '+Math.round(fr*1000/(now-last));fr=0;last=now}
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
+</script>

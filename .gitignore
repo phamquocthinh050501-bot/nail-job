@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+playwright-report/
+test-results/
+# Trạng thái máy chủ xem mockup có chứa khóa phiên, không đưa lên
+.superpowers/brainstorm/*/state/
+.superpowers/brainstorm/.last-*

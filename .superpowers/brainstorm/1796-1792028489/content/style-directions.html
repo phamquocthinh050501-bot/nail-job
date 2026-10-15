@@ -1,0 +1,128 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Playfair+Display:wght@500;700&family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.phone{width:100%;max-width:300px;margin:0 auto;height:620px;border-radius:30px;border:6px solid #1c1c1e;overflow:hidden;position:relative;text-align:left}
+.phone *{box-sizing:border-box;margin:0}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 16px}
+.hero{padding:10px 18px 22px;position:relative}
+.cta{display:inline-block;padding:11px 20px;font-size:13px;font-weight:600;margin-top:14px}
+.sec{padding:0 18px 14px}
+.sec h4{font-size:13px;margin:6px 0 8px}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.tile{height:66px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:11px;padding:6px 10px}
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:8px}
+.slot{font-size:10.5px;text-align:center;padding:7px 0}
+.tag{font-size:12px;color:#888;text-align:center;margin-top:8px}
+
+/* A pastel */
+.a{background:#fff7f5;color:#4a2c3a;font-family:'Be Vietnam Pro',sans-serif}
+.a h1{font-family:'Playfair Display',serif;font-size:30px;line-height:1.12;color:#7a3b55}
+.a .blob1{position:absolute;right:-30px;top:-10px;width:130px;height:130px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#ffd1dc,#f7a8c0);opacity:.85}
+.a .blob2{position:absolute;right:50px;top:90px;width:60px;height:60px;border-radius:50%;background:#ffe3c8}
+.a .cta{background:#e8789b;color:#fff;border-radius:999px;box-shadow:0 6px 16px rgba(232,120,155,.35)}
+.a .tile{border-radius:16px}
+.a .chip{background:#fff;border:1px solid #f3c9d6;border-radius:999px}
+.a .chip.on{background:#f7a8c0;color:#fff;border-color:#f7a8c0}
+.a .slot{background:#fff;border:1px solid #f3c9d6;border-radius:12px}
+.a .slot.on{background:#e8789b;color:#fff}
+.a .slot.off{opacity:.35;text-decoration:line-through}
+
+/* B luxury */
+.b{background:#0f0d0c;color:#e9dfcf;font-family:'Be Vietnam Pro',sans-serif}
+.b h1{font-family:'Cormorant Garamond',serif;font-size:36px;line-height:1.05;font-weight:600;color:#d8b46a;letter-spacing:.5px}
+.b .line{width:48px;height:1px;background:#d8b46a;margin:10px 0}
+.b .hero{background:linear-gradient(180deg,#1b1613,#0f0d0c)}
+.b .cta{border:1px solid #d8b46a;color:#d8b46a;letter-spacing:2px;text-transform:uppercase;font-size:11px}
+.b .tile{border:1px solid #3a2f22}
+.b .chip{border:1px solid #3a2f22;color:#bfae92}
+.b .chip.on{background:#d8b46a;color:#0f0d0c;border-color:#d8b46a}
+.b .slot{border:1px solid #3a2f22;color:#bfae92}
+.b .slot.on{background:#d8b46a;color:#0f0d0c}
+.b .slot.off{opacity:.3;text-decoration:line-through}
+
+/* C glossy */
+.c{background:linear-gradient(160deg,#1a1240,#3b1d6e 55%,#7b2d8e);color:#fff;font-family:'Plus Jakarta Sans',sans-serif}
+.c h1{font-size:30px;line-height:1.1;font-weight:800;background:linear-gradient(90deg,#fff,#ffb3e6 60%,#9ee7ff);-webkit-background-clip:text;color:transparent}
+.c .orb{position:absolute;border-radius:50%;filter:blur(.3px)}
+.c .o1{right:14px;top:-4px;width:96px;height:96px;background:radial-gradient(circle at 30% 25%,#fff,#ff7ad9 40%,#7b2d8e);box-shadow:0 18px 30px rgba(255,122,217,.35)}
+.c .o2{right:84px;top:80px;width:52px;height:52px;background:radial-gradient(circle at 30% 25%,#fff,#7ee7ff 45%,#3b6fd8)}
+.c .o3{right:20px;top:112px;width:32px;height:32px;background:radial-gradient(circle at 30% 25%,#fff,#ffd36e 50%,#e08a1e)}
+.c .glass{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(8px)}
+.c .cta{background:linear-gradient(90deg,#ff7ad9,#8f6bff);border-radius:14px;box-shadow:0 8px 20px rgba(143,107,255,.5)}
+.c .tile{border-radius:14px}
+.c .chip{border-radius:10px}
+.c .chip.on{background:linear-gradient(90deg,#ff7ad9,#8f6bff);border-color:transparent}
+.c .slot{border-radius:10px}
+.c .slot.on{background:linear-gradient(90deg,#ff7ad9,#8f6bff);border-color:transparent}
+.c .slot.off{opacity:.3;text-decoration:line-through}
+</style>
+
+<h2>Vòng 1: chọn hướng phong cách</h2>
+<p class="subtitle">Mỗi khung điện thoại gồm: hero trang chủ, gallery, và bước chọn dịch vụ + giờ trống khi đặt lịch. Bấm vào hướng bạn thích nhất (có thể bấm nhiều hướng nếu muốn trộn).</p>
+
+<div class="trio">
+
+  <div class="card" data-choice="A-pastel" onclick="toggleSelect(this)" style="padding:10px">
+    <div class="phone a">
+      <div class="nav"><b style="font-family:'Playfair Display',serif;color:#7a3b55">Lụa Nails</b><span>☰</span></div>
+      <div class="hero">
+        <div class="blob1"></div><div class="blob2"></div>
+        <h1>Đẹp từng<br>đầu ngón tay</h1>
+        <p style="font-size:12px;margin-top:8px;max-width:170px;color:#8a6475">Mẫu nail mới mỗi tuần. Đặt lịch chỉ 30 giây.</p>
+        <span class="cta">Đặt lịch ngay</span>
+      </div>
+      <div class="sec"><h4>Mẫu nổi bật</h4>
+        <div class="tiles"><div class="tile" style="background:#ffd1dc"></div><div class="tile" style="background:#ffe3c8"></div><div class="tile" style="background:#e5d4f5"></div></div>
+      </div>
+      <div class="sec"><h4>Đặt lịch · Bước 1/4</h4>
+        <div class="chips"><span class="chip on">Gel tay · 350.000đ</span><span class="chip">Đắp bột</span><span class="chip">Chăm sóc</span></div>
+        <div class="slots"><span class="slot">9:00</span><span class="slot off">9:30</span><span class="slot on">10:00</span><span class="slot">10:30</span></div>
+      </div>
+    </div>
+    <div class="card-body"><h3>A · Pastel mềm mại</h3><p>Hồng kem, bo tròn, nữ tính, thân thiện. Hợp tiệm nail bình dân - trung cấp, khách trẻ.</p></div>
+  </div>
+
+  <div class="card" data-choice="B-luxury" onclick="toggleSelect(this)" style="padding:10px">
+    <div class="phone b">
+      <div class="nav"><b style="font-family:'Cormorant Garamond',serif;color:#d8b46a;font-size:19px;letter-spacing:2px">LỤA</b><span style="color:#d8b46a">☰</span></div>
+      <div class="hero">
+        <h1>Nghệ thuật<br>trên từng<br>móng tay</h1>
+        <div class="line"></div>
+        <p style="font-size:12px;max-width:190px;color:#bfae92">Không gian riêng tư. Thợ tay nghề cao.</p>
+        <span class="cta">Đặt lịch hẹn</span>
+      </div>
+      <div class="sec"><h4 style="color:#d8b46a;letter-spacing:1px">BỘ SƯU TẬP</h4>
+        <div class="tiles"><div class="tile" style="background:linear-gradient(135deg,#2a2018,#4b3a22)"></div><div class="tile" style="background:linear-gradient(135deg,#1c1c1c,#3a3a3a)"></div><div class="tile" style="background:linear-gradient(135deg,#3b2420,#6b3d33)"></div></div>
+      </div>
+      <div class="sec"><h4 style="color:#d8b46a;letter-spacing:1px">ĐẶT LỊCH · 1/4</h4>
+        <div class="chips"><span class="chip on">Gel tay · 350.000đ</span><span class="chip">Đắp bột</span><span class="chip">Chăm sóc</span></div>
+        <div class="slots"><span class="slot">9:00</span><span class="slot off">9:30</span><span class="slot on">10:00</span><span class="slot">10:30</span></div>
+      </div>
+    </div>
+    <div class="card-body"><h3>B · Luxury đen vàng</h3><p>Sang trọng, tối giản, chữ serif thanh. Hợp tiệm cao cấp, spa nail, giá cao.</p></div>
+  </div>
+
+  <div class="card" data-choice="C-glossy" onclick="toggleSelect(this)" style="padding:10px">
+    <div class="phone c">
+      <div class="nav"><b style="font-weight:800">lụa<span style="color:#ff7ad9">.</span>nails</b><span>☰</span></div>
+      <div class="hero">
+        <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+        <h1>Nail bóng<br>như gương.</h1>
+        <p style="font-size:12px;margin-top:8px;max-width:150px;opacity:.8">Xu hướng mới, đặt lịch chỉ vài chạm.</p>
+        <span class="cta">Đặt lịch ngay</span>
+      </div>
+      <div class="sec"><h4>Hot trend</h4>
+        <div class="tiles"><div class="tile glass"></div><div class="tile glass" style="background:linear-gradient(135deg,rgba(255,122,217,.5),rgba(143,107,255,.4))"></div><div class="tile glass"></div></div>
+      </div>
+      <div class="sec"><h4>Đặt lịch · 1/4</h4>
+        <div class="chips"><span class="chip glass on">Gel tay · 350.000đ</span><span class="chip glass">Đắp bột</span><span class="chip glass">Chăm sóc</span></div>
+        <div class="slots"><span class="slot glass">9:00</span><span class="slot glass off">9:30</span><span class="slot on">10:00</span><span class="slot glass">10:30</span></div>
+      </div>
+    </div>
+    <div class="card-body"><h3>C · Glossy hiện đại</h3><p>Gradient tím hồng, kính mờ, hạt gel 3D. Hợp nhất để thêm hero 3D, gây "wow" khi chào khách.</p></div>
+  </div>
+
+</div>
+<p class="tag">Đây là mockup tĩnh để chọn hướng. Màu, font, ảnh thật sẽ tinh chỉnh sau khi bạn chọn. Gallery dùng ô màu thay cho ảnh nail.</p>
